@@ -1,0 +1,305 @@
+1. Verify a number is Even/Odd
+
+import java.util.Scanner;
+
+public class EvenOdd{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter a number which you want to check whether that is even or odd");
+int n = in.nextInt();
+
+if(n%2==0){
+System.out.println(n+" is an even number.");
+}else{
+System.out.println(n+" is an odd number.");
+
+}
+}
+}
+
+
+2. Swapping Numbers without using the 3rd variable
+import java.util.Scanner;
+
+public class Swapping{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the 1st number: ");
+int x = in.nextInt();
+System.out.println("Enter the 2nd number: ");
+int y = in.nextInt();
+
+System.out.println("Initial value of x: "+x+" and y: "+y);
+
+x = x+y;
+y = x-y;
+x = x-y;
+
+System.out.println("After swapping value of x: "+x+" and y: "+y);
+}
+}
+Output
+Enter the 1st number:
+ 43
+ Enter the 2nd number:
+ 56
+ Initial value of x: 43 and y: 56
+ After swapping value of x: 56 and y: 43
+
+3. Factorial of a number
+import java.util.Scanner;
+
+public class Factorial{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the number whose factorial you want: ");
+int n = in.nextInt();
+int f =1;
+for(int i=n; i>0; i--){
+f = f*i;
+}
+System.out.println("Factorial of "+n+" is "+f);
+}
+}
+Output
+Enter the number whose factorial you want:
+6
+Factorial of 6 is 720
+
+
+4. How to get the prime numbers between a given range
+package javaTutorial;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GetPrimeNumbers{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter a number from which you want prime number: ");
+int p1 = in.nextInt();
+System.out.println("Enter one more number till which you want prime number: ");
+int p2 = in.nextInt();
+ArrayList<Integer> prime = new ArrayList<Integer>();
+int i=2;
+for(int p=p1; p<=p2; p++){
+i=2;
+for(; i<10; i++){
+if(p%i==0 && p!=i){
+break;
+}
+}
+if(i==10){
+prime.add(p);
+}
+}
+System.out.println("Prime numbers between "+p1+" and "+p2+" are: ");
+for(int j=0; j<prime.size(); j++){
+System.out.print(prime.get(j).toString()+", ");
+}
+}
+}
+Output
+Enter a number from which you want prime number:
+10
+Enter one more number till which you want prime number:
+30
+Prime numbers between 10 and 30 are:
+11, 13, 17, 19, 23, 29,
+
+
+5. Check a number is prime or not.
+Note- A number is prime if it is not divisible by any other number except itself.
+
+import java.util.Scanner;
+
+public class PrimeNumber{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter a number greater than 2 which you want to check whether that number is prime or not: ");
+int p = in.nextInt();
+int i=2;
+for(; i<10; i++){
+if(p%i==0 && p!=i){
+System.out.println("Entered number "+p+" is not a prime number.");
+break;
+}
+}
+if(i==10){
+System.out.println("Entered number "+p+" is a prime number.");
+}
+}
+}
+Output
+Enter a number greater than 2 which you want to check whether that number is prime or not:
+139
+Entered number 139 is a prime number.
+
+
+6. Check if a number is Armstrong or not.
+Note- A number is Armstrong if the sum of the cubes of the digit of the number is equal to the number. ex- 407 = 4*4*4 + 0*0*0 + 7*7*7
+
+import java.util.Scanner;
+
+public class ArmstrongNum{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter a number which you want to check whether that is armstrong or not: ");
+int n = in.nextInt();
+int a = n, r=0, s=0;
+
+while(a!=0){
+r = a%10;
+a = a/10;
+s = s + r*r*r;
+}
+if(s==n){
+System.out.println("Number "+n+" is an armstrong number.");
+}else{
+System.out.println("Number "+n+" is not an armstrong number.");
+}
+}
+}
+Output
+Enter a number which you want to check whether that is armstrong or not:
+407
+Number 407 is an armstrong number.
+
+7. Floyd Triangle
+Note- Floyd Triangle is like 1 2 3 4 5 6 7 8 9 10 ———— Code-
+
+import java.util.Scanner;
+
+public class FloydTriangle{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the number of rows which you want in your Floyd Triangle: ");
+int r = in.nextInt();
+int n=0;
+for(int i=0; i<r; i++){
+for(int j=0; j<=i; j++){
+System.out.print(++n+" ");
+}
+System.out.println();
+}
+}
+}
+Output
+Enter the number of rows which you want in your Floyd Triangle:
+5
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+
+
+8. Palindrome of String or reverse a String.
+import java.util.Scanner;
+
+public class PalindromeString{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the string which you want to check whether that is palindrome or not: ");
+String s = in.next();
+String r = "";
+for(int i=s.length()-1; i>=0; i--){
+r = r+s.charAt(i);
+}
+System.out.println("Reverse of entered string "+s+" is "+r);
+if(r.equals(s)){
+System.out.println("String "+s+" is palindrome.");
+}else{
+System.out.println("String "+s+" is not palindrome.");
+}
+}
+}
+Output
+Enter the string which you want to check whether that is palindrome or not:
+selenium
+Reverse of entered string selenium is muineles
+String selenium is not palindrome.
+
+
+
+9. Binary Search
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BinarySearch{
+public static void main(String[] args){
+Scanner in = new Scanner(System.in);
+System.out.println("Enter the size of the array which should be greater than zero else it will throw InputMismatchException : ");
+int size = in.nextInt();
+int[] array = new int[size];
+System.out.println("Enter the elements of the array: ");
+for(int i=0; i<size; i++){
+array[i] = in.nextInt();
+}
+System.out.println("Enter the search element: ");
+int s = in.nextInt();
+
+Arrays.sort(array); //binary search will work on sorted array only so sort first
+int first, last, middle;
+first=0;
+last = size-1;
+middle = (first+last)/2;
+int i=0;
+for(; i<size; i++){
+if(s>array[middle]){
+first = middle+1;
+}else if(s<array[middle]){
+last = middle-1;
+}else{
+printArray(array);
+System.out.println("Element "+s+" found in the array.");
+break;
+}
+middle= (first+last)/2;
+}
+if(i==size){
+printArray(array);
+System.out.println("Element "+s+" is not found in the array");
+}
+}
+public static void printArray(int[] a){
+System.out.println("Array of elements: ");
+System.out.print("{");
+for(int i:a){
+System.out.print(i+",");
+}
+System.out.println("}");
+}
+}
+
+
+10. Bubble Sort – last but not least in the list of top 10 Java Programs for freshers
+package SeleniumMakeItEasy;
+
+import org.apache.commons.lang3.ArrayUtils;
+
+public class BubbleSort{
+public static void main(String[] args){
+int[] a = {2,3,2,5,3,3,6,1,2,5};
+int l = a.length;
+
+for(int i=0;i<l; i++){
+
+for(int j=0; j<l-1; j++){
+if(a[j]>a[j+1]){
+a[j] = a[j] + a[j+1];
+a[j+1] = a[j] - a[j+1];
+a[j] = a[j] - a[j+1];
+}else if(a[j]==a[j+1]){
+a = ArrayUtils.remove(a,j);
+l = a.length;
+}
+}
+}
+for(int s: a){
+System.out.println(s);
+}
+
+}
+}
